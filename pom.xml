@@ -118,12 +118,14 @@
 				<executions>
 					<execution>
 						<id>test-generate</id>
+						<phase>test</phase>
 						<goals>
 							<goal>test-generate</goal>
 						</goals>
 					</execution>
 					<execution>
 						<id>generate</id>
+						<phase>package</phase>
 						<goals>
 							<goal>generate</goal>
 						</goals>
