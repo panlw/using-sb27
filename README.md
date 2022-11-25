@@ -1,8 +1,7 @@
 # Using Spring Boot V2.7 on GraalVM
 
-- https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-22.3.0
-- https://www.graalvm.org/22.3/docs/getting-started/macos/
-- https://docs.spring.io/spring-boot/docs/3.0.0-RC2/reference/html/native-image.html
+- [graalvm](https://github.com/graalvm/graalvm-ce-builds/releases)
+- [build-native](https://docs.spring.io/spring-boot/docs/3.0.0-RC2/reference/html/native-image.html#native-image.developing-your-first-application.buildpacks.maven]
 
 ## FAQ for build errors
 
@@ -16,19 +15,20 @@ Add [spring-libs](https://repo.spring.io/libs-release/) into [kinco-public](http
 - BUG: Unable to load `io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider`, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
 - FIX: add classifier `osx-aarch_64` to dependency `netty-resolver-dns-native-macos`
     ```xml
-        <properties>
-            <!-- ... -->
-            <spring-native.classifier>osx-aarch_64</spring-native.classifier>
-        </properties>
-        <dependencies>
-            <!-- ... -->
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-resolver-dns-native-macos</artifactId>
-                <classifier>${spring-native.classifier}</classifier>
-                <version>${netty.version}</version>
-            </dependency>
-        </dependencies>
+		<profile>
+			<id>macos</id>
+			<properties>
+				<spring-native.classifier>osx-aarch_64</spring-native.classifier>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>io.netty</groupId>
+					<artifactId>netty-resolver-dns-native-macos</artifactId>
+					<classifier>${spring-native.classifier}</classifier>
+					<version>${netty.version}</version>
+				</dependency>
+			</dependencies>
+		</profile>
     ```
 
 
