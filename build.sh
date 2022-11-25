@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-mvn -Pnative -DskipTests spring-boot:build-image
+
+mvn -Pnative,macos,!dev -DskipTests spring-boot:build-image
