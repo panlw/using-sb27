@@ -2,6 +2,7 @@
 
 - [graalvm](https://github.com/graalvm/graalvm-ce-builds/releases)
 - [build-native](https://docs.spring.io/spring-boot/docs/3.0.0-RC2/reference/html/native-image.html#native-image.developing-your-first-application.buildpacks.maven]
+- [spring-native](https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/)
 
 ## FAQ for build errors
 
