@@ -3,6 +3,7 @@
 - [graalvm](https://github.com/graalvm/graalvm-ce-builds/releases)
 - [build-native](https://docs.spring.io/spring-boot/docs/3.0.0-RC2/reference/html/native-image.html#native-image.developing-your-first-application.buildpacks.maven]
 - [spring-native](https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/)
+	- `native-image` [does not support cross-compilation](https://github.com/oracle/graal/issues/407).
 
 ## FAQ for build errors
 
